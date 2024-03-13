@@ -626,7 +626,8 @@ void rvWeapon::Spawn ( void ) {
 	fireRate	= SEC2MS ( spawnArgs.GetFloat ( "fireRate" ) );
 	altFireRate	= SEC2MS ( spawnArgs.GetFloat ( "altFireRate" ) );
 	if( altFireRate == 0 ) {
-		altFireRate = fireRate;
+		//ramping up the fire rate to laser levels when using altfire
+		altFireRate = fireRate * 0.01f;
 	}
 	spread		= (gameLocal.IsMultiplayer()&&spawnArgs.FindKey("spread_mp"))?spawnArgs.GetFloat ( "spread_mp" ):spawnArgs.GetFloat ( "spread" );
 	nextAttackTime = 0;
