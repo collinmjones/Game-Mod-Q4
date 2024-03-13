@@ -190,6 +190,12 @@ typedef enum {
 	IBS_CANNOT_AFFORD = 3,
 } itemBuyStatus_t;
 
+enum {
+	PLAYER_LEVEL,
+	PLAYER_XP,
+	PLAYER_
+};
+
 const int	ASYNC_PLAYER_TOURNEY_STATUS_BITS = idMath::BitsForInteger( PTS_NUM_STATES );
 
 class idInventory {
